@@ -21,18 +21,9 @@ class UsersQuery extends Query
     public function args(): array
     {
         return [
-            'count' => [
-                'name' => 'count',
-                'type' => Type::int(),
-                'description' => 'How many users to return',
-                'defaultValue' => 10,
-            ],
-            'page' => [
-                'name' => 'page',
-                'type' => Type::int(),
-                'description' => 'The page number',
-                'defaultValue' => 1,
-            ],
+            'id' => ['type' => Type::int()],
+            'name' => ['type' => Type::string()],
+            'email' => ['type' => Type::string()],
         ];
     }
 

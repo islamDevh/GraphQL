@@ -13,7 +13,7 @@ return [
 
         // Any middleware for the graphql route group
         // This middleware will apply to all schemas
-        'middleware' => [],
+        'middleware' => ['web', 'api'],
 
         // Additional route group attributes
         //
@@ -76,6 +76,7 @@ return [
         'default' => [
             'query' => [
                 App\GraphQL\Queries\UsersQuery::class,
+                App\GraphQL\Queries\PostsQuery::class,
             ],
             'mutation' => [
                 // ExampleMutation::class,
@@ -84,6 +85,7 @@ return [
             'types' => [
                 // ExampleType::class,
                 App\GraphQL\Type\UserType::class, // Registering UserType here
+                App\GraphQL\Type\PostType::class, // Registering PostType here
             ],
 
             // Laravel HTTP middleware
