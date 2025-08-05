@@ -13,7 +13,7 @@ return [
 
         // Any middleware for the graphql route group
         // This middleware will apply to all schemas
-        'middleware' => ['web', 'api'],
+        'middleware' => ['api'],
 
         // Additional route group attributes
         //
@@ -80,12 +80,13 @@ return [
             ],
             'mutation' => [
                 // ExampleMutation::class,
+                App\GraphQL\Mutation\CreateUserMutation::class, // Registering CreateUserMutation here
             ],
             // The types only available in this schema
             'types' => [
                 // ExampleType::class,
-                App\GraphQL\Type\UserType::class, // Registering UserType here
-                App\GraphQL\Type\PostType::class, // Registering PostType here
+                App\GraphQL\Type\UserType::class,
+                App\GraphQL\Type\PostType::class,
             ],
 
             // Laravel HTTP middleware
